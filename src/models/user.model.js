@@ -1,4 +1,6 @@
 import mongoose, { mongo, Schema } from "mongoose";
+import jwt from "jsonwebtoken"
+import bcrypt from "bcrypt"
 
 const userSchema = new Schema(
   {
@@ -50,7 +52,8 @@ const userSchema = new Schema(
 );
 
 userSchema.pre("save",async function (next) {
-    if(this.isModified("password")) return next(); 
+    if(!this.isModified("password")) return next(); // agr password modified h tbhi next middlware pr jana
+
     this.password = await bcrypt.hash(this.password,10) // number  means kitne rounds dene h
     next(); 
 });
