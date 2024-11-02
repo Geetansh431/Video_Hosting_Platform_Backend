@@ -33,11 +33,11 @@ import videoRouter from "./routes/video.routes.js"
 app.use("/api/v1/healthcheck", healthcheckRouter) // done
 app.use("/api/v1/users", userRouter); // http://localhost:8000/api/v1/users/register
 app.use("/api/v1/tweets", tweetRouter); // done
-app.use("/api/v1/subscriptions", subscriptionRouter) // ongoing
-app.use("/api/v1/videos", videoRouter)
-app.use("/api/v1/comments", commentRouter);
+app.use("/api/v1/subscriptions", subscriptionRouter) 
+app.use("/api/v1/videos", videoRouter) // done
+app.use("/api/v1/comments", commentRouter); 
 app.use("/api/v1/likes", likeRouter)
 app.use("/api/v1/playlist", playlistRouter)
-app.use("/api/v1/dashboard", dashboardRouter)
+app.use("/api/v1/dashboard", dashboardRouter) 
 
 export { app };
